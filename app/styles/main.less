@@ -1,0 +1,55 @@
+// bower:less
+@import "bower_components/bootstrap/less/bootstrap.less";
+// endbower
+
+@import "_variables";
+@import "_header";
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.fixed-element {
+  display: block;
+  height: 350px;
+  //width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin: @home-elements-margin 0;
+  margin-left: -100%;
+  margin-right: -100%;
+
+  box-shadow: @box-shadow inset;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.parallax-element {
+  display: block;
+  height: 350px;
+  background-size: cover;
+  background-position: 50% 50%;
+  margin: @home-elements-margin 0;
+  margin-left: -100%;
+  margin-right: -100%;
+
+  box-shadow: @box-shadow inset;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+#wrapper {
+  padding-top: @home-elements-margin;
+}
+
+footer {
+  margin: @navbar-margin-bottom*2 0 @navbar-margin-bottom;
+}

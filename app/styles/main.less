@@ -12,43 +12,100 @@
   padding: 0.2em 0;
 }
 
-.fixed-element {
-  display: block;
-  height: 350px;
+section {
+  margin: @home-elements-margin 0;
+}
+
+.swiper-container {
   //width: 100%;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 50% 50%;
-  margin: @home-elements-margin 0;
-  margin-left: -100%;
-  margin-right: -100%;
+  //height: auto;
+  //
+  //iframe {
+  //  display: block;
+  //  margin: 0 auto;
+  //}
+  //.embed-responsive {
+  //  max-width: 90%;
+  //  margin: 0 auto;
+  //}
 
-  box-shadow: @box-shadow inset;
+  &.swiper-container-horizontal {
+    padding-bottom: 115px;
 
-  &:first-child {
-    margin-top: 0;
+    @media screen and (min-width: @screen-sm) {
+      padding-bottom: 75px;
+    }
+
+    @media screen and (min-width: @screen-md) {
+      padding-bottom: 50px;
+    }
+
+    > .swiper-pagination {
+      bottom: 0;
+    }
   }
-}
 
-.parallax-element {
-  display: block;
-  height: 350px;
-  background-size: cover;
-  background-position: 50% 50%;
-  margin: @home-elements-margin 0;
-  margin-left: -100%;
-  margin-right: -100%;
-
-  box-shadow: @box-shadow inset;
-
-  &:first-child {
-    margin-top: 0;
+  .swiper-pagination-bullet {
+    height: auto;
+    width: auto;
+    font-size: 16px;
+    color: #666;
+    opacity: 1;
+    background: transparent;
+    border-radius: 3px;
+    padding: 5px 10px;
   }
+
+  .swiper-pagination-bullet-active {
+    color: #ccc;
+    border: 1px solid #ccc
+  }
+
 }
 
-#wrapper {
-  padding-top: @home-elements-margin;
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+  box-shadow: @box-shadow inset;
 }
+
+//.fixed-element {
+//  display: block;
+//  height: 350px;
+//  //width: 100%;
+//  background-attachment: fixed;
+//  background-size: cover;
+//  background-position: 50% 50%;
+//  margin: @home-elements-margin 0;
+//  margin-left: -100%;
+//  margin-right: -100%;
+//
+//  box-shadow: @box-shadow inset;
+//
+//  &:first-child {
+//    margin-top: 0;
+//  }
+//}
+//
+//.parallax-element {
+//  display: block;
+//  height: 350px;
+//  background-size: cover;
+//  background-position: 50% 50%;
+//  margin: @home-elements-margin 0;
+//  margin-left: -100%;
+//  margin-right: -100%;
+//
+//  box-shadow: @box-shadow inset;
+//
+//  &:first-child {
+//    margin-top: 0;
+//  }
+//}
+
+//#wrapper {
+//  padding-top: @home-elements-margin;
+//}
 
 footer {
   margin: @navbar-margin-bottom*2 0 @navbar-margin-bottom;

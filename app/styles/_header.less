@@ -46,6 +46,12 @@ header {
     img {
       max-height: @logos-height - 30px;
       width: auto;
+      float: right;
+      margin-left: 15px;
+
+      @media screen and (min-width: @screen-sm) {
+        max-height: (@logos-height * 2) - 30px;
+      }
     }
   }
 }

@@ -16,10 +16,37 @@ section {
   margin: @home-elements-margin 0;
 
   img {
-    display: block;
-    width: 250px;
-    height: auto;
-    margin: 0 auto;
+    .img-responsive;
+  }
+}
+
+nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  padding: 15px 0;
+  box-shadow: @box-shadow;
+  background-color: darken(@body-bg, 10%);
+  z-index: 10;
+  transition: opacity 0.5s;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+      display: inline;
+      font-size: @font-size-large;
+      margin-right: 1em;
+    }
+  }
+
+  &.fixed {
+    opacity: 1;
+    transition: opacity 0.5s;
   }
 }
 

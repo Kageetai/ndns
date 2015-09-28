@@ -8,7 +8,7 @@ $(document).ready(function () {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         $('html,body').animate({
-          scrollTop: target.offset().top - parseInt(target.css('margin-top'))
+          scrollTop: target.offset().top - parseInt(target.css('margin-top')) - $('nav').outerHeight()
         }, 750);
         return false;
       }
@@ -24,4 +24,16 @@ $(document).ready(function () {
       $('nav').removeClass('fixed');
     }
   });
+
+  // load videos
+  var videos = [];
+  $.getJSON( "videos.json", function( data ) {
+    videos = data;
+
+    showVideo(videos[0]);
+  });
+
+  function showVideo(video) {
+    $("<iframe class='embed-responsive-item' width='560' height='315' src='" + video.url + "' allowfullscreen></iframe>").appendTo('#videos');
+  }
 });

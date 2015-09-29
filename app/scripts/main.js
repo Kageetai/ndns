@@ -16,7 +16,7 @@ $(document).ready(function () {
   // show fixed nav when scrolling
   $(window).scroll(function (event) {
     var scroll = $(window).scrollTop();
-    if (scroll >= $(window).height()) {
+    if (scroll >= $(window).height() * 0.9) {
       $('nav').addClass('fixed');
     } else {
       $('nav').removeClass('fixed');
@@ -25,6 +25,7 @@ $(document).ready(function () {
 
   // load videos
   var videos = [];
+  var video_active = 0;
   var video = $('#video');
   var videolist = $('.video-list');
   $.getJSON( 'videos.json', function( data ) {
@@ -34,12 +35,23 @@ $(document).ready(function () {
     for(var i = 0; i < videos.length; i++) {
       $('<li class=\'video-' + i + '\'>' + videos[i].name + '</li>')
         .click(function(e) {
-          showVideo(videos[this.className.split('-')[1]]);
+          video_active = this.className.split('-')[1];
+          showVideo(videos[video_active]);
+          videolist.find('> li').removeClass('active');
+          this.classList.add('active');
         }).appendTo(videolist);
     }
 
-    showVideo(videos[0]);
-    videolist.perfectScrollbar();
+    showVideo(videos[video_active]);
+    videolist.perfectScrollbar().find('> li:first-child').addClass('active');
+  });
+
+  $('.video-right').click(function() {
+    showVideo(videos[++video_active]);
+  });
+
+  $('.video-left').click(function() {
+    showVideo(videos[--video_active]);
   });
 
   // resize video list according to video height
@@ -50,6 +62,7 @@ $(document).ready(function () {
 
   function showVideo(v) {
     video.find('> iframe').attr('src', v.url);
-    videolist.height(video.outerHeight());
+    $(window).resize();
+    $('.video-active').text(v.name);
   }
 });

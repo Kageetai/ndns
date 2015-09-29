@@ -26,28 +26,30 @@ $(document).ready(function () {
   // load videos
   var videos = [];
   var video = $('#video');
+  var videolist = $('.video-list');
   $.getJSON( 'videos.json', function( data ) {
     videos = data;
 
     // fill video list
-    var list = $('.video-list');
     for(var i = 0; i < videos.length; i++) {
       $('<li class=\'video-' + i + '\'>' + videos[i].name + '</li>')
         .click(function(e) {
           showVideo(videos[this.className.split('-')[1]]);
-        }).appendTo(list);
+        }).appendTo(videolist);
     }
 
     showVideo(videos[0]);
+    videolist.perfectScrollbar();
   });
 
   // resize video list according to video height
   $(window).resize(function() {
-    $('.video-list').height(video.outerHeight());
+    videolist.height(video.outerHeight());
+    videolist.perfectScrollbar('update');
   });
 
   function showVideo(v) {
     video.find('> iframe').attr('src', v.url);
-    $('.video-list').height(video.outerHeight());
+    videolist.height(video.outerHeight());
   }
 });

@@ -56,51 +56,23 @@ nav {
   }
 }
 
-.swiper-container {
-  //width: 100%;
-  //height: auto;
-  //
-  //iframe {
-  //  display: block;
-  //  margin: 0 auto;
-  //}
-  //.embed-responsive {
-  //  max-width: 90%;
-  //  margin: 0 auto;
-  //}
+.video-list {
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 
-  &.swiper-container-horizontal {
-    padding-bottom: 115px;
+  > li {
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid;
+    cursor: pointer;
 
-    @media screen and (min-width: @screen-sm) {
-      padding-bottom: 75px;
-    }
-
-    @media screen and (min-width: @screen-md) {
-      padding-bottom: 50px;
-    }
-
-    > .swiper-pagination {
-      bottom: 0;
+    &:hover {
+      color: @link-color;
+      border-color: white;
     }
   }
-
-  .swiper-pagination-bullet {
-    height: auto;
-    width: auto;
-    font-size: 16px;
-    color: #666;
-    opacity: 1;
-    background: transparent;
-    border-radius: 3px;
-    padding: 5px 10px;
-  }
-
-  .swiper-pagination-bullet-active {
-    color: #ccc;
-    border: 1px solid #ccc
-  }
-
 }
 
 .parallax-window {

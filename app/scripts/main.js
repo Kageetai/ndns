@@ -1,5 +1,3 @@
-console.log('\'Allo \'Allo!');
-
 $(document).ready(function () {
   // smooth scroll to anchor
   $('a[href*=#]:not([href=#])').click(function() {
@@ -27,13 +25,29 @@ $(document).ready(function () {
 
   // load videos
   var videos = [];
-  $.getJSON( "videos.json", function( data ) {
+  var video = $('#video');
+  $.getJSON( 'videos.json', function( data ) {
     videos = data;
+
+    // fill video list
+    var list = $('.video-list');
+    for(var i = 0; i < videos.length; i++) {
+      $('<li class=\'video-' + i + '\'>' + videos[i].name + '</li>')
+        .click(function(e) {
+          showVideo(videos[this.className.split('-')[1]]);
+        }).appendTo(list);
+    }
 
     showVideo(videos[0]);
   });
 
-  function showVideo(video) {
-    $("<iframe class='embed-responsive-item' width='560' height='315' src='" + video.url + "' allowfullscreen></iframe>").appendTo('#videos');
+  // resize video list according to video height
+  $(window).resize(function() {
+    $('.video-list').height(video.outerHeight());
+  });
+
+  function showVideo(v) {
+    video.find('> iframe').attr('src', v.url);
+    $('.video-list').height(video.outerHeight());
   }
 });

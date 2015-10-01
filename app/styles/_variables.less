@@ -29,7 +29,7 @@
 @text-color:            whitesmoke;
 
 //** Global textual link color.
-@link-color:            rgba(0, 209, 10, 0.55);
+@link-color:            @brand-primary;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 //** Link hover decoration.
@@ -199,7 +199,7 @@
 @input-border-radius-small:      @border-radius-small;
 
 //** Border color for inputs on focus
-@input-border-focus:             #66afe9;
+@input-border-focus:             lighten(@brand-primary, 25%);
 
 //** Placeholder text color
 @input-color-placeholder:        #999;

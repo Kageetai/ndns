@@ -11,7 +11,6 @@
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="/bower_components/perfect-scrollbar/css/perfect-scrollbar.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -60,6 +59,7 @@
         <ul>
           <li><a href="#header">Nacht des nacherzählten Spiels</a></li>
           <li><a href="#wrapper">Videos</a></li>
+          <li><a href="#events">Events</a></li>
           <li><a href="#about">Über</a></li>
           <li><a href="#contact">Kontakt</a></li>
         </ul>
@@ -76,12 +76,33 @@
         <span class="video-left glyphicon glyphicon-menu-left" aria-hidden="true"></span>
         <span class="video-active"></span>
         <span class="video-right glyphicon glyphicon-menu-right" aria-hidden="true"></span></div>
-      <ul class="video-list"></ul>
+      <ul id="video-list"></ul>
     </div>
     <div class="col-md-9">
       <div id="video" class="embed-responsive embed-responsive-16by9">
         <iframe class="embed-responsive-item" width="560" height="315" src="" allowfullscreen></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="parallax-window"
+     data-parallax="scroll"
+     data-image-src="/images/waterfall.jpg"
+     data-natural-width="1680"
+     data-natural-height="1050"
+     data-bleed="0.1"
+     data-android-fix="true"></div>
+
+<section class="container" id="events">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Zukünftige Events</h2>
+      <ul id="events-future"></ul>
+    </div>
+    <div class="col-md-6">
+      <h2>Vergangene Events</h2>
+      <ul id="events-past"></ul>
     </div>
   </div>
 </section>
@@ -285,12 +306,12 @@
 <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="/bower_components/parallax.js/parallax.min.js"></script>
 <script src="/bower_components/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-<script src="/bower_components/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
+<script src="scripts/fb.js"></script>
 <!-- endbuild -->
 </body>
 </html>

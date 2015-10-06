@@ -21,6 +21,7 @@ $(document).ready(function() {
   });
 
   function fb_callback(response) {
+    console.log(response);
     events = events.concat(response.data);
     if(response.paging.next) {
       $.get(response.paging.next, fb_callback);

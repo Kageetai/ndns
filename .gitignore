@@ -4,3 +4,6 @@ dist
 .sass-cache
 bower_components
 test/bower_components
+
+# you need to build your provide your own config
+app/config.json

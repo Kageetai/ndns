@@ -29,7 +29,7 @@ $(document).ready(function () {
   var videos = [];
   var video_active = 0;
   var video = $('#video');
-  var videolist = $('.video-list');
+  var videolist = $('#video-list');
   $.getJSON( 'videos.json', function( data ) {
     videos = data;
 

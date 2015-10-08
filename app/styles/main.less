@@ -25,6 +25,8 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 55.5px;
+  overflow: visible;
   opacity: 0;
   padding: 15px 0;
   box-shadow: @box-shadow;
@@ -38,14 +40,26 @@ nav {
     list-style: none;
 
     > li {
-      display: inline;
+      display: inline-block;
       font-size: @font-size-large;
+      text-transform: uppercase;
       margin-right: 1em;
+      vertical-align: top;
 
-      &:first-child {
-        border-right: 1px solid;
-        margin-right: 1em;
-        padding-right: 1em;
+      &:first-child > a > img {
+        height: 75px;
+        width: auto;
+        transform: translateY(-7px);
+      }
+
+      > a {
+        color: #ccc;
+
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: none;
+        }
       }
     }
   }

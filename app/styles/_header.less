@@ -9,12 +9,12 @@ header {
   .brand {
     display: block;
     position: absolute;
-    bottom: @logos-height + 25px;
+    bottom: @logos-height - 10px;
     max-width: 200px;
 
     @media screen and (min-width: @screen-sm) {
       max-width: 300px;
-      bottom: (@logos-height * 2)  + 25px;
+      bottom: (@logos-height * 2) - 10px;
     }
 
     & > img {
@@ -51,6 +51,7 @@ header {
 
       @media screen and (min-width: @screen-sm) {
         max-height: (@logos-height * 2) - 30px;
+        margin-left: 30px;
       }
     }
   }

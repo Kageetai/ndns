@@ -4,7 +4,6 @@ header {
   height: 100vh;
   //background: url(../images/waterfall.jpg) 50% 50%;
   //background-size: cover;
-  text-align: center;
 
   .brand {
     display: block;
@@ -25,8 +24,14 @@ header {
   .header-scroller {
     position: absolute;
     bottom: 0;
+    left: 15px;
     font-size: 3em;
     color: #ccc;
+
+    @media screen and (min-width: @screen-md) {
+      left: 0;
+      text-align: center;
+    }
   }
 
   .logos {

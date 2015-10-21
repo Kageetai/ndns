@@ -9,7 +9,7 @@ $(document).ready(function () {
     var events_past = $('#events-past');
     var access_token;
 
-    $.get('//graph.facebook.com/v2.4/oauth/access_token?client_id='+window.config.fb_client_id+'&client_secret='+window.config.fb_client_secret+'&grant_type=client_credentials', function (response) {
+    $.get('https://graph.facebook.com/v2.4/oauth/access_token?client_id='+window.config.fb_client_id+'&client_secret='+window.config.fb_client_secret+'&grant_type=client_credentials', function (response) {
       access_token = response.access_token;
     });
 

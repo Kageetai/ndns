@@ -31,7 +31,7 @@ $(document).ready(function () {
     });
 
     function fb_callback(response) {
-      console.log(response);
+      //console.log(response);
       events = events.concat(response.data);
       if (response.paging.next) {
         $.get(response.paging.next, fb_callback);
@@ -42,10 +42,11 @@ $(document).ready(function () {
 
     function parseEvents(events) {
       var today = new Date();
+      events_past.empty();
+      events_future.empty();
       $.each(events, function (i, e) {
         var date = new Date(e.start_time);
         if (e.name.indexOf('Nacht') >= 0 && date < today) {
-          console.log(e);
           if (e.place.location) {
             events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.location.city + "</a></li>");
           } else {

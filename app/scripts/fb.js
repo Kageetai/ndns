@@ -45,9 +45,19 @@ $(document).ready(function () {
       $.each(events, function (i, e) {
         var date = new Date(e.start_time);
         if (e.name.indexOf('Nacht') >= 0 && date < today) {
-          events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.name + "</a></li>");
+          console.log(e);
+          if (e.place.location) {
+            events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.location.city + "</a></li>");
+          } else {
+            events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.name + "</a></li>");
+          }
         } else if (e.name.indexOf('Nacht') >= 0 && date >= today) {
-          events_future.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.name + "</a></li>");
+          if (e.place.location) {
+            events_future.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.location.city + "</a></li>");
+          } else {
+            events_future.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.name + "</a></li>");
+          }
+
         }
       });
 

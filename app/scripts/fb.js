@@ -47,18 +47,24 @@ $(document).ready(function () {
       $.each(events, function (i, e) {
         var date = new Date(e.start_time);
         if (e.name.indexOf('Nacht') >= 0 && date < today) {
-          if (e.place.location) {
+          if (e.place && e.place.location) {
             events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.location.city + "</a></li>");
+          } else if (e.place) {
+            events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.name + "</a></li>")
           } else {
-            events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.name + "</a></li>");
+            events_past.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.name + "</a></li>")
           }
         } else if (e.name.indexOf('Nacht') >= 0 && date >= today) {
-          if (e.place.location) {
+          if (e.place && e.place.location) {
             events_future.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.location.city + "</a></li>");
-          } else {
+          } else if (e.place) {
             events_future.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.place.name + "</a></li>");
+          } else {
+            events_future.append("<li><a href='http://www.facebook.com/events/" + e.id + "'>" + date.toLocaleDateString('de-DE') + " - " + e.name + "</a></li>");
           }
-
+        }
+        if (events_future.children().length == 0) {
+          events_future.append("<p>Derzeit keine Events geplant...</p>");
         }
       });
 

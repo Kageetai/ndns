@@ -156,7 +156,35 @@
   "name": "Let's Retell: Pokémon - Ike bei der Nacht des nacherzählten Spiels",
   "url": "http://www.youtube.com/embed/UXNiegR9GL8?v=UXNiegR9GL8",
   "season": 1,
-  "location": "Dortmund - Next Levl Conference 2014",
+  "location": "Dortmund - Next Level Conference 2014",
   "game": "Pokémon",
   "speaker": "Ike Markus"
+}, {
+  "name": "Let's Retell: Among the Sleep - Johanna bei der Nacht des nacherzählten Spiels",
+  "url": "http://www.youtube.com/embed/17Ds1u3iTGU?v=17Ds1u3iTGU",
+  "season": 2,
+  "location": "München - Werk 1",
+  "game": "Among the Sleep",
+  "speaker": "Johanna"
+}, {
+  "name": "Let's Retell: Thief - Moritz bei der Nacht des nacherzählten Spiels",
+  "url": "http://www.youtube.com/embed/tThpgqJjwwA?v=tThpgqJjwwA",
+  "season": 2,
+  "location": "Karlsruhe - ZKM",
+  "game": "Thief",
+  "speaker": "Moritz"
+}, {
+  "name": "Let's Retell: Donkey Kong Country - Paul-Anton bei der Nacht des nacherzählten Spiels",
+  "url": "http://www.youtube.com/embed/lN_RPu8GGUw?v=lN_RPu8GGUw",
+  "season": 2,
+  "location": "Frankfurt - Deutsches Film Museum",
+  "game": "Donkey Kong Country",
+  "speaker": "Paul-Anton"
+}, {
+  "name": "Let's Retell: Dark Age of Camelot - Anja bei der Nacht des nacherzählten Spiels",
+  "url": "http://www.youtube.com/embed/E-B4aUiuDF4?v=E-B4aUiuDF4",
+  "season": 2,
+  "location": "Berlin - Gamefest 2015",
+  "game": "Dark Age of Camelot",
+  "speaker": "Anja"
 }]
